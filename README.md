@@ -1,12 +1,12 @@
 ==================================================================
 # Files:
 
-model.py - Used to create the model.
-train.py - Used to generate data batches and train the model. Saves model and weights into current folder. Try/Except used to catch except "KeyboardInterrupt" and "SystemExit" to save weights and model before exit. Useful for debug.
-drive.py - The script to drive the car. Run as "python drive.py model.json".
-model.json - The model architecture.
-model.h5 - Sample of saved model weights.
-"/screenshots" folder contains some of the output examples 
+model.py - Used to create the model.  
+train.py - Used to generate data batches and train the model. Saves model and weights into current folder. Try/Except used to catch except "KeyboardInterrupt" and "SystemExit" to save weights and model before exit. Useful for debug.  
+drive.py - The script to drive the car. Run as "python drive.py model.json".  
+model.json - The model architecture.  
+model.h5 - Sample of saved model weights.  
+"/screenshots" folder contains some of the output examples   
 
 ==================================================================
 # Introduction: 
@@ -38,16 +38,3 @@ Data is split into training (85%) and validation (15%) datasets to help diagnose
 
 'EarlyStopping' callback is used to stop training when a validation loss has stopped improving (not decreasing for 1+ epochs).
 'ModelCheckpoint' callback is used to save the model after every epoch (if validation loss has improved).
-
-Examples with screenshots ("/screenshots" folder):
-1. "Screen Shot 2016-12-26 at 12.02.02.png" – after car reached left side of the road the model produces steering angle of '1.77' (turn right) to avoid crossing the yellow line. 
-2. "Screen Shot 2016-12-26 at 12.03.03.png" – car got pretty close to the right side of the road, so model outputted the '-7.47' steering angle (turn to the left). 
-3. "Screen Shot 2016-12-26 at 12.11.11.png" – car reached to close to the right turn, model outputted the '-10.70' steering angle (sharp turn to the left). 
-
-==================================================================
-# How to improve the model further:
-
-1. Extra data – additional data on smooth recovery shall help to avoid some of the zigzagging the model still have.
-2. Acceleration Speed - at the moment model performs well with small throttles (0.1 – 0.2) only.
-3. Experiment with MaxPooling instead of sub sampling. 
-
